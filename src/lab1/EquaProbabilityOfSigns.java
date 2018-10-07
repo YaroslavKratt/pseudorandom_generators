@@ -4,22 +4,22 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class EquaProbabilityOfSigns extends Test {
-    double hiSquare=0;
     double Z=1.28155;     //0.9=1.28155, 0.95=1.64485, 0.99=2.32635
     double l=255;
-    double hiSquare1MinusAlfa=Math.sqrt(2*l)*Z+l;
     public static final String EQUAL_PROBABILITY_OF_SIGNS_MASSEGE = "EquaProbabilityOfSigns lab1.Test";
     Map<Integer,Integer> bytesMap;
 
     EquaProbabilityOfSigns(int alphaFlag, Map<Integer,Integer> bytesMap) {
         super(alphaFlag);
         this.bytesMap=bytesMap;
+        hiSquared1MinusAlfa=Math.sqrt(2*l)*Z+l;
+
     }
 
     @Override
     void calculate() {
-        int s=0;
-        for(int i=0; i<256;i++) {
+    hiSquared=0;
+    for(int i=0; i<256;i++) {
             int k;
 
             if(bytesMap.get(i)==null) {
@@ -28,7 +28,7 @@ public class EquaProbabilityOfSigns extends Test {
             else{
                 k=bytesMap.get(i);
             }
-            hiSquare=hiSquare + Math.pow(k - (Generator.Nbyte / 256),2) / (Generator.Nbyte / 256);
+            hiSquared=hiSquared + Math.pow(k - (Generator.Nbyte / 256),2) / (Generator.Nbyte / 256);
         }
     }
     void result() {

@@ -13,15 +13,15 @@ public class Main {
         generators.add(new StandartGenerator());
         generators.add(new  LehmerLow());
         generators.add(new LehmerHigh());
-        generators.add(new  Geffe(6536,876867587,8767867));
-        generators.add(new L20(34252345));
+        generators.add(new  Geffe(new Random().nextInt(),new Random().nextInt(),new Random().nextInt()));
+        generators.add(new L20(new Random().nextInt()));
         generators.add(new  L89());
         generators.add(new  Librarian("D:\\Study\\крипта\\4 курс\\CRPT_LAB1\\src\\lab1\\harry.txt"));
         generators.add(new   BM());
         generators.add(new  BMbyte());
         generators.add(new   BBS());
         generators.add(new BBSbyte());
-        generators.add(new Volfram(9849));
+        generators.add(new Volfram(new Random().nextInt()));
 
         System.out.println(Test.INPUT_MASSEGE);
         int next = sc.nextInt();

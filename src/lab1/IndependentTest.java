@@ -57,7 +57,8 @@ public class IndependentTest  extends Test{
         System.out.println(Test.HI_POW_2 + hiSquared + Test.HI_POW_2_1_MINUS_ALFA + hiSquared1MinusAlfa);
         if (this.hiSquared <= hiSquared1MinusAlfa) {
             System.out.println(Test.PASSED);
-            System.out.println();
+	        System.out.println(Test.SEPARATOR);
+	        System.out.println();
         } else {
             System.out.println(Test.NOT_PASSED);
             System.out.println(Test.SEPARATOR);
