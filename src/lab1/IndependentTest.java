@@ -17,8 +17,8 @@ public class IndependentTest  extends Test{
             bytes[i] = bytesList.get(i);
         }
     }
-
-   private  void calculate() {
+@Override
+     void calculate() {
        int [][]frequency = new int[256][256];
        int []a=new int [256];
        int []v= new int [256];
@@ -52,17 +52,6 @@ public class IndependentTest  extends Test{
         hiSquared = (bytes.length / 2) * (res -1);
     }
 
-     void result() {
-        System.out.println(IndependentTest.INDEPENDENT_TEST_MESSAGE);
-        calculate();
-        System.out.println(Test.HI_POW_2 + hiSquared + Test.HI_POW_2_1_MINUS_ALFA+ hiSquared1MinusAlfa);
-        if(this.hiSquared <= hiSquared1MinusAlfa) {
-            System.out.println(Test.PASSED);
-            System.out. println();
-        }
-        else {
-            System.out.println(Test.NOT_PASSED);
-            System.out.println(Test.SEPARATOR);
-        }
-    }
+
+
 }
