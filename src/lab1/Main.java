@@ -13,15 +13,15 @@ public class Main {
         generators.add(new StandartGenerator());
         generators.add(new  LehmerLow());
         generators.add(new LehmerHigh());
-        generators.add(new  Geffe(6536,876867587,8767867));
-        generators.add(new L20(34252345));
+        generators.add(new  Geffe(new Random().nextInt(),new Random().nextInt(),new Random().nextInt()));
+        generators.add(new L20(new Random().nextInt()));
         generators.add(new  L89());
         generators.add(new  Librarian("D:\\Study\\крипта\\4 курс\\CRPT_LAB1\\src\\lab1\\harry.txt"));
         generators.add(new   BM());
         generators.add(new  BMbyte());
         generators.add(new   BBS());
         generators.add(new BBSbyte());
-        generators.add(new Volfram(9849));
+        generators.add(new Volfram(new Random().nextInt()));
 
         System.out.println(Test.INPUT_MASSEGE);
         int next = sc.nextInt();
@@ -39,20 +39,24 @@ public class Main {
            ArrayList<Integer> temp = gen.generate();
 
            if(gen.getType().equals("bit")) {
-               EquaProbabilityOfSigns eq = new EquaProbabilityOfSigns(next);
                ArrayList<Integer> bytesReDone = gen.binToByte(temp);
+               EquaProbabilityOfSigns eq = new EquaProbabilityOfSigns(next,gen.arrListToMap(bytesReDone));
                IndependentTest ind = new IndependentTest(bytesReDone,next);
+               UniformityTest ut = new UniformityTest(bytesReDone,next);
 
-               eq.result(gen.arrListToMap(bytesReDone));
+               eq.result();
                ind.result();
+              // ut.result();
                bytes.add(gen.binToByte(temp));
            }
            if(gen.getType().equals("byte")) {
-               EquaProbabilityOfSigns eq = new EquaProbabilityOfSigns(next);
-               IndependentTest ind=new IndependentTest(temp,next);
+               EquaProbabilityOfSigns eq = new EquaProbabilityOfSigns(next,gen.arrListToMap(temp));
+               IndependentTest ind = new IndependentTest(temp,next);
+               UniformityTest ut = new UniformityTest(temp,next);
 
-               eq.result(gen.arrListToMap(temp));
+               eq.result();
                ind.result();
+              // ut.result();
                bytes.add(temp);
            }
             map.add(gen.arrListToMap(temp));
