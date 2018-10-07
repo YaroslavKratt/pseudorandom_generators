@@ -39,20 +39,24 @@ public class Main {
            ArrayList<Integer> temp = gen.generate();
 
            if(gen.getType().equals("bit")) {
-               EquaProbabilityOfSigns eq = new EquaProbabilityOfSigns(next);
                ArrayList<Integer> bytesReDone = gen.binToByte(temp);
+               EquaProbabilityOfSigns eq = new EquaProbabilityOfSigns(next,gen.arrListToMap(bytesReDone));
                IndependentTest ind = new IndependentTest(bytesReDone,next);
+               UniformityTest ut = new UniformityTest(bytesReDone,next);
 
-               eq.result(gen.arrListToMap(bytesReDone));
+               eq.result();
                ind.result();
+              // ut.result();
                bytes.add(gen.binToByte(temp));
            }
            if(gen.getType().equals("byte")) {
-               EquaProbabilityOfSigns eq = new EquaProbabilityOfSigns(next);
-               IndependentTest ind=new IndependentTest(temp,next);
+               EquaProbabilityOfSigns eq = new EquaProbabilityOfSigns(next,gen.arrListToMap(temp));
+               IndependentTest ind = new IndependentTest(temp,next);
+               UniformityTest ut = new UniformityTest(temp,next);
 
-               eq.result(gen.arrListToMap(temp));
+               eq.result();
                ind.result();
+              // ut.result();
                bytes.add(temp);
            }
             map.add(gen.arrListToMap(temp));

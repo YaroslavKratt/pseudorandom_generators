@@ -27,7 +27,7 @@ public class UniformityTest  extends Test {
 		for (int i = 0; i < 256; i++)
 			for (int j = 0; j < r; j++)
 				frequencies[i][j] = 0;
-		for (int i = 0; i < n; i++)
+		for (int i = 1; i < n; i++)
 			frequencies[bytes[i]][i / m]++;
 		int[] a = new int[256];
 		for (int i = 0; i < 256; i++) {
@@ -44,6 +44,21 @@ public class UniformityTest  extends Test {
 					hiSquared += Math.pow(frequencies[i][j], 2);
 		hiSquared = n * ((hiSquared / this.r) - 1);
 
+
+	}
+
+	void result() {
+		System.out.println(Test.SEPARATOR);
+		System.out.println(UniformityTest.UNIFORMITY_TEST_MESSAGE);
+		calculate();
+		System.out.println(Test.HI_POW_2 + hiSquared + Test.HI_POW_2_1_MINUS_ALFA + hiSquared1MinusAlfa);
+		if (this.hiSquared <= hiSquared1MinusAlfa) {
+			System.out.println(Test.PASSED);
+			System.out.println();
+		} else {
+			System.out.println(Test.NOT_PASSED);
+			System.out.println(Test.SEPARATOR);
+		}
 
 	}
 }

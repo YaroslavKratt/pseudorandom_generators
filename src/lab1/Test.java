@@ -36,17 +36,5 @@ public  abstract class Test {
 
     abstract void calculate();
 
-    void result() {
-        System.out.println(IndependentTest.INDEPENDENT_TEST_MESSAGE);
-        calculate();
-        System.out.println(Test.HI_POW_2 + hiSquared + Test.HI_POW_2_1_MINUS_ALFA + hiSquared1MinusAlfa);
-        if (this.hiSquared <= hiSquared1MinusAlfa) {
-            System.out.println(Test.PASSED);
-            System.out.println();
-        } else {
-            System.out.println(Test.NOT_PASSED);
-            System.out.println(Test.SEPARATOR);
-        }
 
-    }
 }
