@@ -32,7 +32,6 @@ public class EquaProbabilityOfSigns extends Test {
         }
     }
     void result() {
-        System.out.println(Test.SEPARATOR);
         System.out.println(EquaProbabilityOfSigns.EQUAL_PROBABILITY_OF_SIGNS_MASSEGE);
         calculate();
         System.out.println(Test.HI_POW_2 + hiSquared + Test.HI_POW_2_1_MINUS_ALFA + hiSquared1MinusAlfa);

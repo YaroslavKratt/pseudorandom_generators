@@ -48,7 +48,6 @@ public class UniformityTest  extends Test {
 	}
 
 	void result() {
-		System.out.println(Test.SEPARATOR);
 		System.out.println(UniformityTest.UNIFORMITY_TEST_MESSAGE);
 		calculate();
 		System.out.println(Test.HI_POW_2 + hiSquared + Test.HI_POW_2_1_MINUS_ALFA + hiSquared1MinusAlfa);

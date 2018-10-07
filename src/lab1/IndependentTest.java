@@ -52,7 +52,6 @@ public class IndependentTest  extends Test{
         hiSquared = (bytes.length / 2) * (res -1);
     }
     void result() {
-        System.out.println(Test.SEPARATOR);
         System.out.println(IndependentTest.INDEPENDENT_TEST_MESSAGE);
         calculate();
         System.out.println(Test.HI_POW_2 + hiSquared + Test.HI_POW_2_1_MINUS_ALFA + hiSquared1MinusAlfa);
