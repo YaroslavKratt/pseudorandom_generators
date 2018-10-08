@@ -17,21 +17,14 @@ public class Volfram extends Generator{
         return x;
     }
     int rightShift(int n)
-    {
-        int bit=n&1;
-        n=n>>>1;
-        n=n|(bit<<31);
-        return n;
+    {return (n << 1) | (n >>> (Integer.SIZE - 1));
     }
     int leftShift(int n)
     {
         //System.out.println("n" +Integer.toBinaryString(n));
-       int bit=(n&0b10000000000000000000000000000000)>>>31;
-    //    System.out.println("bit"+bit);
+       int bit= n >>> (Integer.SIZE - 1);
        n=n<<1;
        n=n|bit;
-     //   System.out.println("n" +Integer.toBinaryString(n));
-
         return n;
     }
     @Override

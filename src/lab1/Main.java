@@ -16,8 +16,8 @@ public class Main {
         generators.add(new  Geffe(new Random().nextInt(),new Random().nextInt(),new Random().nextInt()));
         generators.add(new L20(new Random().nextInt()));
         generators.add(new  L89());
-        generators.add(new  Librarian("D:\\Study\\крипта\\4 курс\\CRPT_LAB1\\src\\lab1\\harry.txt"));
-        generators.add(new   BM());
+        generators.add(new  Librarian("/home/raccoon/IdeaProjects/pseudorandom_generators/src/lab1/harry.txt"));
+        generators.add(new   BM()); //lab1/harry.txt
         generators.add(new  BMbyte());
         generators.add(new   BBS());
         generators.add(new BBSbyte());
@@ -46,7 +46,7 @@ public class Main {
 
                eq.result();
                ind.result();
-              // ut.result();
+               ut.result();
                bytes.add(gen.binToByte(temp));
            }
            if(gen.getType().equals("byte")) {
@@ -56,70 +56,10 @@ public class Main {
 
                eq.result();
                ind.result();
-              // ut.result();
+               ut.result();
                bytes.add(temp);
            }
             map.add(gen.arrListToMap(temp));
         }
-
-
-
-
-
-
-       // StandartGenerator stGen=new StandartGenerator();//good
-        //stGen.generate();
-
-        //Lehmer lmrLow=new LehmerLow();
-        //EquaProbabilityOfSigns eq =new EquaProbabilityOfSigns();//good
-       /* ArrayList<Integer> temp=lmrLow.generate();
-        eq.result(lmrLow.arrListToMap(temp));*/
-        //lmrLow.generate();
-       // Lehmer lmrHigh=new LehmerHigh();
-       // ArrayList<Integer> temp=lmrHigh.generate();//good
-       // eq.result(lmrHigh.arrListToMap(temp));
-       //lmrHigh.generate();
-       /* Geffe gef=new Geffe(498498849,1665444684,654684686);//bad
-        ArrayList<Integer> temp=gef.generate();
-        temp=gef.binToByte(temp);
-        eq.result(gef.arrListToMap(temp));
-
-        //gef.generate();
-        L20 l20=new L20(34252345);//good
-       /* ArrayList<Integer> temp=l20.generate();
-        temp=l20.binToByte(temp);
-        eq.result(l20.arrListToMap(temp));*/
-        /*L89 l89=new L89();//good
-        /* ArrayList<Integer> temp=l89.generate();
-        temp=l89.binToByte(temp);
-        eq.result(l89.arrListToMap(temp));*/
-        //l89.generate();
-        //Librarian lbr= new Librarian("D:\\Study\\крипта\\4 курс\\CRPT_LAB1\\src\\lab1\\harry.txt");//BAD
-         //ArrayList<Integer> temp=lbr.generate();
-      //  eq.result(lbr.arrListToMap(temp));
-      //  BM bm=new BM();//good
-
-       /* ArrayList<Integer> temp=bm.generate();
-        temp=bm.binToByte(temp);
-        eq.result(bm.arrListToMap(temp));*/
-        //BMbyte bMbyte=new BMbyte();//good
-        //ArrayList<Integer> temp=bMbyte.generate();
-        //temp=bMbyte.binToByte(temp);
-       // eq.result(bMbyte.arrListToMap(temp));
-        //bMbyte.generate();
-       // BBS bbs=new BBS();//good
-        /*ArrayList<Integer> temp=bbs.generate();
-        temp=bbs.binToByte(temp);
-         eq.result(bbs.arrListToMap(temp));*/
-       // BBSbyte bbSbyte=new BBSbyte();//good
-        /*ArrayList<Integer> temp=bbSbyte.generate();
-        eq.result(bbSbyte.arrListToMap(temp));*/
-       // Volfram vol=new Volfram(22222298); ///хуй пойми что не так
-       /*  ArrayList<Integer> temp=vol.generate();
-        temp=vol.binToByte(temp);
-        eq.result(vol.arrListToMap(temp));*/
-
-
-
     }
 }
