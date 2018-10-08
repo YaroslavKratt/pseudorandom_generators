@@ -20,10 +20,8 @@ public class BBSbyte extends BBS {
         System.out.println("BBSbyte");
         for (int i = 0; i <Nbyte ; i++) {
             int temp=getNewBit();
-           // System.out.println(temp);
             keeper.add(temp);
             addElement(temp,keeperMap);
-        //    System.out.print(temp);
         }
         return keeper;
     }
