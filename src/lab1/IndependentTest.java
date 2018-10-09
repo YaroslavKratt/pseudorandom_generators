@@ -6,12 +6,13 @@ import java.util.Arrays;
 
 public class IndependentTest  extends Test{
     private int []bytes;
-    public static final  String INDEPENDENT_TEST_MESSAGE="IndependentTest lab1.Test";
+    public static final  String INDEPENDENT_TEST_MESSAGE="IndependentTest";
     IndependentTest(ArrayList<Integer>  bytesList, int flagOfAlfa) {
         super(flagOfAlfa);
         l=Math.pow(l,2);
         hiSquared1MinusAlfa = Math.sqrt(2 * l) * z + l;
         bytes = new int[bytesList.size()];
+        this.testName = IndependentTest.INDEPENDENT_TEST_MESSAGE;
 
         for (int i = 0; i < bytesList.size(); i++) {
             bytes[i] = bytesList.get(i);
@@ -51,7 +52,7 @@ public class IndependentTest  extends Test{
             }
         hiSquared = (bytes.length / 2) * (res -1);
     }
-    void result() {
+    boolean result() {
         System.out.println(IndependentTest.INDEPENDENT_TEST_MESSAGE);
         calculate();
         System.out.println(Test.HI_POW_2 + hiSquared + Test.HI_POW_2_1_MINUS_ALFA + hiSquared1MinusAlfa);
@@ -59,9 +60,11 @@ public class IndependentTest  extends Test{
             System.out.println(Test.PASSED);
 	        System.out.println(Test.SEPARATOR);
 	        System.out.println();
+	        return true;
         } else {
             System.out.println(Test.NOT_PASSED);
             System.out.println(Test.SEPARATOR);
+            return false;
         }
 
     }

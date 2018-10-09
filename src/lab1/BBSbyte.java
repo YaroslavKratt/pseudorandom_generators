@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public class BBSbyte extends BBS {
     BBSbyte(){
        this.type="byte";
+        this.generatorName="BBSbyte";
+
     }
     @Override
     int getNewBit() {

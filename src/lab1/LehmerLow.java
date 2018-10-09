@@ -6,6 +6,8 @@ public class LehmerLow extends Lehmer {
     LehmerLow()
     {
         this.type="byte";
+        this.generatorName="LehmerLow";
+
 
     }
     @Override

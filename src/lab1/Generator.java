@@ -7,13 +7,18 @@ public abstract class Generator {
     protected static int Nbit=3000000;
     public static int Nbyte=375000;//количество итераций
     //количество итераций
+     protected String generatorName;
   public Map<Integer,Integer> keeperMap = new LinkedHashMap<>() ;
-   protected ArrayList<Integer>keeper=new ArrayList<Integer>();
+   protected ArrayList<Integer>keeper = new ArrayList<Integer>();
 
    public  String getType()
    {
        return type;
    }
+
+    public String getGeneratorName() {
+        return generatorName;
+    }
 
     abstract ArrayList<Integer> generate() throws UnsupportedEncodingException;
 
@@ -27,7 +32,7 @@ public abstract class Generator {
            temp=temp+Integer.toString(bit);
            if(j%8==0)
            {    int n=Integer.parseInt(temp,2);
-               //System.out.println(n);
+               //System.out.println(N);
                byteArr.add(n);
                j=0;
                temp="";

@@ -13,6 +13,8 @@ public class Librarian extends Generator{
     {
         this.fileName=fileName;
         this.type="byte";
+        this.generatorName="Librarian";
+
 
 
 
