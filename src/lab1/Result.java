@@ -49,7 +49,7 @@ public class Result {
 	@Override
 	public String toString()
 	{
-		return getGeneratorName() + ";"+ getResult() + ";" + getHiSquared() + ";" + getHiSquaredMinusAlpha()+  ";\n";
+		return getGeneratorName() + ";"+ getResult() + ";" + Math.round(getHiSquared()) + ";" + Math.round(getHiSquaredMinusAlpha())+  ";\n";
 	}
 
 }
