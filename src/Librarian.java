@@ -1,4 +1,5 @@
-package lab1;
+import com.sun.org.apache.xerces.internal.impl.io.ASCIIReader;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -20,25 +21,27 @@ public class Librarian extends Generator{
 
     }
     @Override
-    ArrayList<Integer> generate() throws UnsupportedEncodingException {
+    ArrayList<Integer> generate() throws IOException {
         System.out.println("Librarian");
+        String txt = "";
         try
         {
-            FileInputStream bf=new FileInputStream(fileName);
-            int line;
-            int j=bf.available();
-            while(j!=0)
-            {
-              //  System.out.println(str+" ");
-                int k=bf.read();
-                //System.out.println(Integer.toBinaryString(k));
-                keeper.add(k);
-                addElement(k,keeperMap);
-                j--;
+            FileInputStream fis=new FileInputStream(fileName);
+            BufferedReader br = new BufferedReader(new InputStreamReader(fis, "ASCII"));
+            String line;
+            while((line = br.readLine())!= null)
+            { txt=txt+line;
             }
-            System.out.println(str);
+            char[] charArr= txt.toCharArray();
+            int size =0;
+            for (char b:charArr) {
+                if(b>256)
+                    continue;
+                keeper.add((int) b);
+                size++;
 
-
+            }
+            this.Nbyte = size;
         }
         catch (IOException e)
         {

@@ -1,5 +1,3 @@
-package lab1;
-
 import java.io.StringBufferInputStream;
 import java.util.ArrayList;
 
@@ -42,8 +40,11 @@ public class Result {
 	public String getTestName() {
 		return testName;
 	}
-	boolean getResult() {
-		return result;
+	String getResult() {
+		if(result)
+			return "+";
+		else
+			return "-";
 	}
 
 	@Override

@@ -1,5 +1,3 @@
-package lab1;
-
 import java.util.ArrayList;
 
 public class LehmerLow extends Lehmer {

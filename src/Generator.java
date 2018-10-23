@@ -1,10 +1,10 @@
-package lab1;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 
 public abstract class Generator {
     protected  String type;
-    protected static int Nbit=3000000;
+    protected  static int Nbit=3000000;
     public static int Nbyte=375000;//количество итераций
     //количество итераций
      protected String generatorName;
@@ -20,7 +20,7 @@ public abstract class Generator {
         return generatorName;
     }
 
-    abstract ArrayList<Integer> generate() throws UnsupportedEncodingException;
+    abstract ArrayList<Integer> generate() throws IOException;
 
     protected ArrayList<Integer> binToByte(ArrayList<Integer> binArr)
    {

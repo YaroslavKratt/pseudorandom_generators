@@ -1,5 +1,3 @@
-package lab1;
-
 import javax.jws.soap.SOAPBinding;
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.math.BigInteger;

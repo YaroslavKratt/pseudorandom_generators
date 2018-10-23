@@ -1,5 +1,3 @@
-package lab1;
-
 import java.util.ArrayList;
 
 public class L20 extends Generator{

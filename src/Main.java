@@ -1,5 +1,3 @@
-package lab1;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -23,12 +21,13 @@ public class Main {
 		generators.add(new Geffe(new Random().nextInt(), new Random().nextInt(), new Random().nextInt()));
 		generators.add(new L20(new Random().nextInt()));
 		generators.add(new L89());
-		generators.add(new Librarian("/home/raccoon/IdeaProjects/pseudorandom_generators/src/lab1/harry.txt"));
 		generators.add(new BM()); //lab1/harry.txt
 		generators.add(new BMbyte());
 		generators.add(new BBS());
 		generators.add(new BBSbyte());
 		generators.add(new Volfram(new Random().nextInt()));
+		generators.add(new Librarian("/home/kratt/IdeaProjects/Pseudorandom_Generators/src/harry.txt"));
+
 
 		System.out.println(Test.INPUT_MASSEGE);
 		int next = sc.nextInt();

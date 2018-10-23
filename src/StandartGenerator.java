@@ -1,5 +1,3 @@
-package lab1;
-
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 import java.util.Random;

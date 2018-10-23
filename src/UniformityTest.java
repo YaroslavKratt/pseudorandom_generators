@@ -1,5 +1,3 @@
-package lab1;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -17,7 +15,8 @@ public class UniformityTest  extends Test {
 		this.testName=UniformityTest.UNIFORMITY_TEST_MESSAGE;
 		hiSquared1MinusAlfa = Math.sqrt(2 * l) * z + l;
 		bytes = new int[N];
-		for (int i = 0; i < N; i++) {
+		System.out.println(N);
+		for (int i = 0; i < N-1; i++) {
 			bytes[i] = bytesList.get(i);
 		}
 
@@ -25,32 +24,26 @@ public class UniformityTest  extends Test {
 
 	@Override
 	void calculate() {
-		hiSquared=0;
+		hiSquared = 0;
 		int vIJ[][] = new int[R][256];
 		int vI[] = new int[R];
-		Arrays.fill(vI,0);
-		for (int j = 0; j< R; j++) {
-			for (int i=M*j; i<M *j + M; i++) {
-				vIJ[j][bytes[i]]++;
-			}
+		Arrays.fill(vI, 0);
+		int[][] frequencies = new int[R][256];
+		for (int i = 0; i < N; i++)
+			frequencies[bytes[i]][i / M]++;
+		int[] a = new int[256];
+		for (int i = 0; i < R; i++) {
+			for (int j = 0; j < 256; j++)
+				a[i] += frequencies[i][j];
 		}
-		for (int j = 0; j < R; j++) {
-			for (int i = 0; i < vIJ.length; i++) {
-				vI[j] += vIJ[i][j];
-			}
-			
-		}
-		for (int i = 0; i < 256 ; i++) {
-			for (int j = 0; j < R; j++) {
-				if(vI[j] != 0) {
-					hiSquared += (Math.pow(vIJ[j][i], 2)) / (vI[j] * M);
-				}
-			}
-		}
-		hiSquared = N * (hiSquared - 1);
-
+		for (int i = 0; i < R; i++)
+			for (int j = 0; j < 256; j++)
+				if (a[i] != 0)
+					hiSquared += (Math.pow(frequencies[i][j], 2) / a[i]);
+				else
+					continue;
+		hiSquared = N * (hiSquared/M - 1);
 	}
-
 	boolean result() {
 		System.out.println(UniformityTest.UNIFORMITY_TEST_MESSAGE);
 		calculate();

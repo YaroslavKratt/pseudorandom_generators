@@ -1,5 +1,3 @@
-package lab1;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -33,7 +31,10 @@ public class IndependentTest  extends Test{
                frequency[i][j] = 0;
            }
        }
-        for (int i = 1; i <( bytes.length/2); i++) {
+        cycle:for (int i = 1; i <( bytes.length/2); i++) {
+            //System.out.println(bytes[2*i]);
+            if(bytes[2*i]>512)
+                continue cycle;
             ++frequency[bytes[2*i-1]][ bytes[2*i]];
             }
         for (int i = 0; i < 256; i++) {
