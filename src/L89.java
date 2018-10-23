@@ -1,5 +1,3 @@
-package lab1;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -9,6 +7,8 @@ public class L89 extends Generator{
     L89() {
         this.type="bit";
         Random rand=new Random();
+        this.generatorName="L89";
+
         for (int i = 0; i <3 ; i++)
         {
              state[i]=rand.nextInt();

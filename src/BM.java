@@ -1,19 +1,19 @@
-package lab1;
-
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BM extends Generator
 {
 
    private static BigInteger  a=new BigInteger("5B88C41246790891C095E2878880342E88C79974303BD0400B090FE38A688356", 16);
    private static BigInteger  p=new BigInteger("CEA42B987C44FA642D80AD9F51F10457690DEF10C83D0BC1BCEE12FC3B6093E3",16);
-   private BigInteger T=new BigInteger("111111111");
+   private BigInteger T=new BigInteger(String.valueOf(new Random().nextInt()));
    private static final BigInteger CONST=(p.subtract(new BigInteger("1"))).divide(new BigInteger("2"));
 
    BM()
    {
        this.type="bit";
+       this.generatorName="BM";
    }
    int getNewBit()
    {

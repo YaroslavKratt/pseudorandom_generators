@@ -1,5 +1,3 @@
-package lab1;
-
 import java.util.ArrayList;
 
 public class Geffe extends Generator {
@@ -13,6 +11,8 @@ public class Geffe extends Generator {
         this.state2=start2;
         this.state3=start3;
         type="bit";
+        this.generatorName="Geffe";
+
 
     }
     int L11(){

@@ -1,11 +1,11 @@
-package lab1;
-
 import java.util.ArrayList;
 
 public class LehmerLow extends Lehmer {
     LehmerLow()
     {
         this.type="byte";
+        this.generatorName="LehmerLow";
+
 
     }
     @Override

@@ -1,5 +1,3 @@
-package lab1;
-
 import java.math.BigInteger;
 import java.util.ArrayList;
 
@@ -11,6 +9,8 @@ public class BBS extends Generator {
     BBS()
     {
         this.type="bit";
+        this.generatorName="BBS";
+
 
     }
     int getNewBit()

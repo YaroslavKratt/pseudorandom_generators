@@ -1,5 +1,3 @@
-package lab1;
-
 import javax.jws.soap.SOAPBinding;
 import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.math.BigInteger;
@@ -8,6 +6,8 @@ import java.util.ArrayList;
 public class BBSbyte extends BBS {
     BBSbyte(){
        this.type="byte";
+        this.generatorName="BBSbyte";
+
     }
     @Override
     int getNewBit() {

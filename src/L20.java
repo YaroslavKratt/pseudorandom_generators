@@ -1,5 +1,3 @@
-package lab1;
-
 import java.util.ArrayList;
 
 public class L20 extends Generator{
@@ -8,6 +6,8 @@ public class L20 extends Generator{
     {
         this.state=state;
        this.type="bit";
+        this.generatorName="L20";
+
 
     }
     int getNewBit()
